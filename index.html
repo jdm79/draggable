@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Draggie James</title>
+<style>
+#div1 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+}
+#div2 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+}
+#div3 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+}
+#div4 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+}
+#div5 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+}
+#div6 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+    background-color: black;
+    color: white;
+    cursor: move
+
+}
+#div7 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+    background-color: blue;
+    color: white;
+    cursor: move
+
+}
+#div8 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+    background-color: green;
+    color: white;
+    cursor: move
+
+}
+#div9 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+    background-color: red;
+    color: white;
+    cursor: move
+
+}
+#div10 {
+    width: 1300px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+    background-color: grey;
+    color: white;
+    cursor: move
+
+}
+
+
+
+}
+</style>
+<script>
+
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function dragHandler(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dropHandler(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+
+
+
+</script>
+</head>
+<body>
+
+
+<div id="div1" ondrop="dropHandler(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="dropHandler(event)" ondragover="allowDrop(event)"></div>
+<div id="div3" ondrop="dropHandler(event)" ondragover="allowDrop(event)"></div>
+<div id="div4" ondrop="dropHandler(event)" ondragover="allowDrop(event)"></div>
+<div id="div5" ondrop="dropHandler(event)" ondragover="allowDrop(event)"></div>
+<br>
+
+
+<div id="div6" ondragstart="dragHandler(event)" draggable="true"></div>
+<div id="div7" ondragstart="dragHandler(event)" draggable="true"></div>
+<div id="div8" ondragstart="dragHandler(event)" draggable="true"></div>
+<div id="div9" ondragstart="dragHandler(event)" draggable="true"></div>
+<div id="div10" ondragstart="dragHandler(event)" draggable="true"></div>
+
+
+</body>
+</html>
